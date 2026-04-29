@@ -66,7 +66,7 @@ export function SiteFooter() {
 
       <div className="border-t border-cream/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-cream/50 md:flex-row">
-          <p>© {new Date().getFullYear()} Pretzel Burgers. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pretzel Burgers. All rights reserved. · Designed by Yassen Anwar Elsayed</p>
           <div className="flex gap-4">
             <Link to="/menu" className="hover:text-cream">Menu</Link>
             <Link to="/contact" className="hover:text-cream">Contact</Link>
