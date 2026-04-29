@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import interior from "@/assets/restaurant-interior.jpg";
+import heroBurger from "@/assets/hero-pretzel-burger.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Our Story — Ember & Bun" },
-      { name: "description", content: "From a backyard grill to Brooklyn's favorite burger joint. Meet the team behind Ember & Bun." },
-      { property: "og:title", content: "Our Story — Ember & Bun" },
-      { property: "og:description", content: "From backyard grill to Brooklyn's favorite burger joint." },
+      { title: "About — Pretzel Burgers" },
+      { name: "description", content: "Learn about Pretzel Burgers, Egypt's first pretzel burger concept serving Alexandria and North Coast." },
+      { property: "og:title", content: "About — Pretzel Burgers" },
+      { property: "og:description", content: "Signature pretzel buns, bold sauces, and branches across Alexandria and North Coast." },
     ],
   }),
   component: AboutPage,
@@ -19,29 +19,29 @@ function AboutPage() {
     <Layout>
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary">Our Story</span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-primary">About us</span>
           <h1 className="mt-3 text-5xl font-bold leading-tight md:text-6xl">
-            Born from a <span className="text-primary">backyard grill</span>.
+            Built around the <span className="text-primary">pretzel bun</span>.
           </h1>
           <div className="mt-6 space-y-4 text-muted-foreground">
             <p>
-              Ember & Bun started in 2017 as a stubborn obsession. Two friends, one cast-iron skillet, and a relentless quest for the perfect smash patty. We tested every cheese, every bun, every sauce — until we got it right.
+              Pretzel Burgers is built on one clear idea: burgers should look memorable, taste bold, and feel instantly recognizable from the first glance.
             </p>
             <p>
-              Today, our Brooklyn flagship serves thousands every week, but the recipe hasn't changed. Locally sourced grass-fed beef. House-baked brioche. Real hardwood char. Done with care, every single time.
+              The signature pretzel bun, rich sauces, and loaded burger builds gave the brand its identity and helped make it known as Egypt's first pretzel burger.
             </p>
             <p>
-              We don't take ourselves too seriously. We just take the burgers seriously.
+              Today the brand serves guests from Sporting on Alexandria Corniche to Rhactus Mall in North Coast, with direct phone and WhatsApp ordering for fast service.
             </p>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-3xl shadow-warm">
+        <div className="relative overflow-hidden rounded-3xl bg-secondary/30 shadow-warm">
           <img
-            src={interior}
-            alt="Cozy restaurant interior with warm lighting and brick walls"
+            src={heroBurger}
+            alt="Pretzel burger hero shot with rich sauce and glossy bun"
             loading="lazy"
-            width={1536}
-            height={1024}
+            width={1365}
+            height={768}
             className="h-full w-full object-cover"
           />
         </div>
@@ -50,9 +50,9 @@ function AboutPage() {
       <section className="bg-charcoal text-cream">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 py-20 md:grid-cols-3">
           {[
-            { num: "9", label: "Years grilling" },
-            { num: "1.2M+", label: "Burgers served" },
-            { num: "3x", label: "Best of Brooklyn" },
+            { num: "2", label: "Active branches" },
+            { num: "9", label: "Main sandwiches shown" },
+            { num: "100%", label: "Pretzel burger focus" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="font-display text-6xl font-black text-mustard md:text-7xl">{s.num}</div>
