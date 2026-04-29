@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle, Phone } from "lucide-react";
+import logo from "@/assets/pretzel-burgers-logo.png";
 
 export function SiteFooter() {
   return (
@@ -7,9 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-black text-primary-foreground">
-              PB
-            </span>
+            <img src={logo} alt="Pretzel Burgers logo" className="h-12 w-12 rounded-full bg-cream object-contain p-1" />
             <div>
               <span className="font-display text-xl font-bold">Pretzel Burgers</span>
               <p className="text-xs uppercase tracking-[0.24em] text-cream/55">Alexandria & North Coast</p>
@@ -22,8 +21,8 @@ export function SiteFooter() {
             {[
               { icon: MessageCircle, href: "https://wa.me/201031995666", label: "WhatsApp" },
               { icon: Phone, href: "tel:035925817", label: "Call Alexandria" },
-              { icon: Instagram, href: "#", label: "Instagram" },
-              { icon: Facebook, href: "#", label: "Facebook" },
+              { icon: Instagram, href: "https://www.instagram.com/pretzelburgers.eg/", label: "Instagram" },
+              { icon: Facebook, href: "https://www.facebook.com/pretzelburgers.eg/", label: "Facebook" },
             ].map((item) => {
               const Icon = item.icon;
               return (

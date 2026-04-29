@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/pretzel-burgers-logo.png";
 
 const navItems = [
   { to: "/" as const, label: "Home" },
@@ -16,9 +17,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-3">
-          <span className="flex h-9 min-w-9 items-center justify-center rounded-full bg-primary text-sm font-black text-primary-foreground">
-            PB
-          </span>
+          <img src={logo} alt="Pretzel Burgers logo" className="h-12 w-12 object-contain" />
           <div>
             <span className="block font-display text-xl font-bold tracking-tight">Pretzel Burgers</span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
