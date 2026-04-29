@@ -1,49 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
-import { MapPin, Phone, Clock, Mail } from "lucide-react";
-import { useState } from "react";
+import { MapPin, MessageCircle, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Visit Us — Ember & Bun" },
-      { name: "description", content: "Find Ember & Bun in Brooklyn. Hours, location, phone, and reservations." },
-      { property: "og:title", content: "Visit Us — Ember & Bun" },
-      { property: "og:description", content: "Find us in Brooklyn. Reserve a table or just walk in." },
+      { title: "Contact — Pretzel Burgers" },
+      { name: "description", content: "Contact Pretzel Burgers in Alexandria and North Coast. Phone numbers, WhatsApp, and branch locations." },
+      { property: "og:title", content: "Contact — Pretzel Burgers" },
+      { property: "og:description", content: "Call or WhatsApp Pretzel Burgers for Alexandria and North Coast orders." },
     ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
     <Layout>
       <section className="bg-charcoal text-cream">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-mustard">Visit Us</span>
-          <h1 className="mt-3 text-5xl font-bold md:text-6xl">Come on in.</h1>
+          <span className="text-xs font-semibold uppercase tracking-widest text-mustard">Contact</span>
+          <h1 className="mt-3 text-5xl font-bold md:text-6xl">Order from Pretzel Burgers.</h1>
           <p className="mx-auto mt-4 max-w-xl text-cream/70">
-            Walk-ins welcome. Reservations recommended for groups of 6 or more.
+            Reach the nearest branch fast by phone or WhatsApp.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-8 px-6 py-20 md:grid-cols-2">
         <div className="space-y-6">
           {[
-            { icon: MapPin, title: "Location", body: "142 Grill Lane\nBrooklyn, NY 11201" },
-            { icon: Clock, title: "Hours", body: "Mon–Thu: 11am – 10pm\nFri–Sat: 11am – Midnight\nSun: 12pm – 9pm" },
-            { icon: Phone, title: "Phone", body: "(555) 421-0808" },
-            { icon: Mail, title: "Email", body: "hello@emberandbun.com" },
+            { icon: MapPin, title: "Alexandria branch", body: "75 El Gaish Rd, Sporting\nAlexandria Corniche" },
+            { icon: Phone, title: "Alexandria phone", body: "03 5925817" },
+            { icon: MapPin, title: "North Coast branch", body: "Rhactus Mall\nNorth Coast, El Alamein" },
+            { icon: Phone, title: "North Coast phone", body: "01119421888" },
+            { icon: MessageCircle, title: "WhatsApp", body: "01031995666\n01034988777" },
           ].map((item) => (
             <div key={item.title} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
               <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <item.icon className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-bold">{item.title}</h3>
+                <h2 className="font-bold">{item.title}</h2>
                 <p className="mt-1 whitespace-pre-line text-sm text-muted-foreground">{item.body}</p>
               </div>
             </div>
@@ -51,71 +49,46 @@ function ContactPage() {
         </div>
 
         <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
-          <h2 className="text-3xl font-bold">Reserve a Table</h2>
+          <h2 className="text-3xl font-bold">Quick order options</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Tell us when you're coming and we'll have your table ready.
+            Use the fastest channel for your branch.
           </p>
-
-          {submitted ? (
-            <div className="mt-8 rounded-xl bg-primary/10 p-6 text-center">
-              <p className="font-display text-2xl font-bold text-primary">See you soon! 🍔</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                We'll confirm your reservation by email shortly.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-              className="mt-6 space-y-4"
+          <div className="mt-8 space-y-4">
+            <a
+              href="tel:035925817"
+              className="flex items-center justify-between rounded-2xl border border-border px-5 py-4 transition-colors hover:border-primary hover:bg-secondary/40"
             >
-              <div className="grid gap-4 md:grid-cols-2">
-                <Field label="Name" name="name" required />
-                <Field label="Phone" name="phone" type="tel" required />
-              </div>
-              <Field label="Email" name="email" type="email" required />
-              <div className="grid gap-4 md:grid-cols-2">
-                <Field label="Date" name="date" type="date" required />
-                <Field label="Time" name="time" type="time" required />
-              </div>
-              <Field label="Party size" name="size" type="number" min={1} required />
-              <button
-                type="submit"
-                className="w-full rounded-full bg-primary py-3.5 text-sm font-semibold text-primary-foreground shadow-warm transition-transform hover:scale-[1.02]"
-              >
-                Request Reservation
-              </button>
-            </form>
-          )}
+              <span>
+                <span className="block font-semibold">Call Alexandria</span>
+                <span className="text-sm text-muted-foreground">03 5925817</span>
+              </span>
+              <Phone className="h-5 w-5 text-primary" />
+            </a>
+            <a
+              href="tel:01119421888"
+              className="flex items-center justify-between rounded-2xl border border-border px-5 py-4 transition-colors hover:border-primary hover:bg-secondary/40"
+            >
+              <span>
+                <span className="block font-semibold">Call North Coast</span>
+                <span className="text-sm text-muted-foreground">01119421888</span>
+              </span>
+              <Phone className="h-5 w-5 text-primary" />
+            </a>
+            <a
+              href="https://wa.me/201031995666"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-between rounded-2xl bg-primary px-5 py-4 text-primary-foreground shadow-warm"
+            >
+              <span>
+                <span className="block font-semibold">WhatsApp orders</span>
+                <span className="text-sm text-primary-foreground/80">01031995666 / 01034988777</span>
+              </span>
+              <MessageCircle className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  ...rest
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  min?: number;
-}) {
-  return (
-    <label className="block">
-      <span className="text-sm font-medium">{label}</span>
-      <input
-        name={name}
-        type={type}
-        {...rest}
-        className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
-      />
-    </label>
   );
 }
