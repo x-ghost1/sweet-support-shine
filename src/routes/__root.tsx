@@ -29,8 +29,12 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ember & Bun — Hand-Crafted Burgers in Brooklyn" },
-      { name: "description", content: "Smoky, juicy, hand-crafted burgers made with locally sourced beef and house-baked buns. Visit us in Brooklyn." },
+      { title: "Pretzel Burgers — Egypt's First Pretzel Burger" },
+      {
+        name: "description",
+        content:
+          "Pretzel Burgers in Alexandria and North Coast. Explore beef and chicken burgers on signature pretzel buns and order fast by phone or WhatsApp.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
